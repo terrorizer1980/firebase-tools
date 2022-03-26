@@ -19,12 +19,13 @@
     "lint:quiet": "npm run lint:ts -- --quiet && npm run lint:other",
     "lint:ts": "eslint --config .eslintrc.js --ext .ts,.js .",
     "mocha": "nyc mocha 'src/test/**/*.{ts,js}'",
-    "prepare": "npm run clean && npm run build -- --build tsconfig.publish.json",
+    "prepare": "npm run snyk-protect && npm run clean && npm run build -- --build tsconfig.publish.json",
     "test": "npm run lint:quiet && npm run mocha",
     "test:client-integration": "./scripts/client-integration-tests/run.sh",
     "test:extensions-emulator": "./scripts/extensions-emulator-tests/run.sh",
     "test:hosting": "./scripts/hosting-tests/run.sh",
-    "test:triggers-end-to-end": "./scripts/triggers-end-to-end-tests/run.sh"
+    "test:triggers-end-to-end": "./scripts/triggers-end-to-end-tests/run.sh",
+    "snyk-protect": "snyk-protect"
   },
   "files": [
     "lib",
@@ -98,7 +99,7 @@
     "jsonschema": "^1.0.2",
     "jsonwebtoken": "^8.2.1",
     "leven": "^3.1.0",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.20",
     "marked": "^0.7.0",
     "marked-terminal": "^3.3.0",
     "minimatch": "^3.0.4",
@@ -121,7 +122,8 @@
     "update-notifier": "^4.1.0",
     "uuid": "^3.0.0",
     "winston": "^3.0.0",
-    "ws": "^7.2.3"
+    "ws": "^7.2.3",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@types/async": "^3.0.8",
@@ -184,5 +186,6 @@
     "supertest": "^3.3.0",
     "ts-node": "^7.0.1",
     "typescript": "^3.9.5"
-  }
+  },
+  "snyk": true
 }
