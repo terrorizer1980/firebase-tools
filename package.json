@@ -121,7 +121,7 @@
     "update-notifier": "^4.1.0",
     "uuid": "^3.0.0",
     "winston": "^3.0.0",
-    "ws": "^7.2.3"
+    "ws": "^8.17.1"
   },
   "devDependencies": {
     "@types/async": "^3.0.8",
